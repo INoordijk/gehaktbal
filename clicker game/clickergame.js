@@ -16,5 +16,7 @@ function setup() {
 function draw()
 {
   textSize(32);
-  text('score: ' + score, 10, 40);
+  text('score: ' + score, 460, 40);
 }
+
+
