@@ -21,6 +21,9 @@ function setup() {
 
 function draw()
 {
+  fill(255, 0, 0);
+  image(img, 0, 0, 1080, 720);
+  image(swordfish, 400, 250, 250, 200);
   textSize(32);
   text('Money: ' + Money, 460, 40);
 }
@@ -29,7 +32,7 @@ function mouseClicked()
 {
   if(mouseX > 400 && mouseX < 650 && mouseY > 250 && mouseY < 450)
   {
-    Money = Money += moneyPerClick;
+    Money += moneyPerClick;
     
   }
 }
