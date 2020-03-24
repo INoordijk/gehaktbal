@@ -44,11 +44,11 @@ function draw()
   textSize(32);
   if(Money < 1000000)
     {
-      text('Money: ' + Money, 460, 40);
+      text('Money: ' + round(Money), 460, 40);
     }
   else if(Money <= 1000000000 && Money >= 1000000)
     { 
-      text('Money: ' + (Money / 1000000) + 'M', 460, 40);
+      text('Money: ' + (round(Money) / 1000000) + 'M', 460, 40);
     }
     else 
     {
@@ -66,7 +66,7 @@ function draw()
     text('Cost:'+ updateCost, 300, 40);
    }
   
-   Money += moneyPerSec;
+   Money += moneyPerSec/60;
 }
 
 function mouseClicked()
