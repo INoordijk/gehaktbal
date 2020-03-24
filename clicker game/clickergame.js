@@ -8,6 +8,7 @@ let upgreat;
 let cesna;
 let moneyPerSec;
 let updateCost;
+let updateDone;
 
 
 function preload()
@@ -25,7 +26,7 @@ function setup()
   fill(255, 0, 0);
   image(img, 0, 0, 1080, 720);
   image(swordfish, 400, 250, 250, 200);
-  Money = 0;
+  Money = 100;
   moneyPerClick = 1;
   image(upgreat, 30, 100, 100, 100);
   playerClick = 1;
@@ -33,6 +34,7 @@ function setup()
   image(cesna, 1100, 0, 200, 100);
   moneyPerSec = 0;
   updateCost = 100;
+  updateDone = 1;
 }
 
 function draw()
@@ -59,12 +61,9 @@ function draw()
   text('money per second: ' + moneyPerSec, 430, 60, textSize(20));
 
   image(upgreat, 30,100,100,100);
-    
-   if (updateCost == 100){
-    console.log('poep');
+
        
-    text('Cost:'+ updateCost, 300, 40);
-   }
+    text('Cost:' + updateCost, 35, 250);
   
    Money += moneyPerSec;
 }
@@ -78,19 +77,31 @@ function mouseClicked()
   }
   if(mouseX > 30 && mouseX < 130 && mouseY > 100 && mouseY < 200)
   {
+      
+    if (Money >= updateCost) {
+        
+    Money -= updateCost;
     playerLvl++;
-    playerClick = playerLvl * 7;
+    playerClick = playerLvl * 20;
     moneyPerClick += playerClick;
+    updateDone += 1;
+    updateCost = updateCost * updateDone;
+        
     
-      console.log(moneyPerClick);
-      console.log(playerLvl);
-      console.log(playerClick);
+      
+    if( updateDone = 3){
+        updateDone = 1
+    }
+        
+        
+    console.log( updateCost);
+    console.log(moneyPerClick);
   }
 
   if(mouseX > 1100 && mouseX < 1300 && mouseY > 0 && mouseY < 100)
   {
     moneyPerSec += 1;
   }
-
+ }
 }
 
