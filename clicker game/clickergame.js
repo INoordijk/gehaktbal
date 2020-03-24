@@ -7,6 +7,8 @@ let playerClick;
 let upgreat;
 let cesna;
 let moneyPerSec;
+let updateCost;
+
 
 function preload()
 {
@@ -30,6 +32,7 @@ function setup()
   playerLvl = 1;
   image(cesna, 1100, 50, 300, 200);
   moneyPerSec = 0;
+  updateCost = 100;
 }
 
 function draw()
@@ -54,6 +57,14 @@ function draw()
 
   image(upgreat, 30, 100, 100, 100);
   text('money per second: ' + moneyPerSec, 430, 60, textSize(20));
+
+  image(upgreat, 30,100,100,100);
+    
+   if (updateCost == 100){
+    console.log('poep');
+       
+    text('Cost:'+ updateCost, 300, 40);
+   }
   
 }
 
