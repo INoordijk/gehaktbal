@@ -4,6 +4,7 @@ let swordfish;
 let moneyPerClick;
 let playerLvl;
 let playerClick;
+let updateCost;
 
 function preload()
 {
@@ -23,6 +24,7 @@ function setup() {
   image(upgreat, 300,300,300,300);
   playerClick = 1;
   playerLvl = 1;
+  updateCost = 100;
 }
 
 function draw()
@@ -43,6 +45,12 @@ function draw()
         text('Big pepe', 460, 40);
     }
   image(upgreat, 30,100,100,100);
+    
+   if (updateCost == 100){
+    console.log(poep);
+       
+    Text('Cost:'+ updateCost, 300, 40);
+   }
   
 }
 
