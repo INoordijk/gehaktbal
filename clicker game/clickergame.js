@@ -8,6 +8,8 @@ let upgreat;
 let cesna;
 let moneyPerSec;
 let updateCost;
+let cesnaCost;
+let totalCesna;
 
 
 function preload()
@@ -33,6 +35,8 @@ function setup()
   image(cesna, 1100, 0, 200, 100);
   moneyPerSec = 0;
   updateCost = 100;
+  cesnaCost = 40;
+  totalCesna = 0;
 }
 
 function draw()
@@ -42,6 +46,8 @@ function draw()
   image(swordfish, 400, 250, 250, 200);
   image(cesna, 1100, 0, 200, 100);
   textSize(32);
+  totalCesna;
+  cesnaCost;
   if(Money < 1000000)
     {
       text('Money: ' + round(Money), 460, 40);
@@ -58,15 +64,18 @@ function draw()
   image(upgreat, 30, 100, 100, 100);
   text('money per second: ' + moneyPerSec, 430, 60, textSize(20));
 
-  image(upgreat, 30,100,100,100);
+  image(upgreat, 30, 100, 100, 100);
     
    if (updateCost == 100){
     console.log('poep');
        
     text('Cost:'+ updateCost, 300, 40);
    }
-  
-   Money += moneyPerSec/60;
+  text('cost: ' + round(cesnaCost), 1150, 80, textSize(14));
+
+  Money += moneyPerSec/60;
+  console.log(totalCesna);
+  console.log(cesnaCost);
 }
 
 function mouseClicked()
@@ -87,9 +96,12 @@ function mouseClicked()
       console.log(playerClick);
   }
 
-  if(mouseX > 1100 && mouseX < 1300 && mouseY > 0 && mouseY < 100)
+  if(mouseX > 1100 && mouseX < 1300 && mouseY > 0 && mouseY < 100 && Money >= cesnaCost)
   {
     moneyPerSec += 1;
+    Money -= cesnaCost;
+    totalCesna += 1;
+    cesnaCost *= 1.3;
   }
 
 }
