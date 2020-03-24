@@ -30,7 +30,7 @@ function setup()
   image(upgreat, 30, 100, 100, 100);
   playerClick = 1;
   playerLvl = 1;
-  image(cesna, 1100, 50, 300, 200);
+  image(cesna, 1100, 0, 200, 100);
   moneyPerSec = 0;
   updateCost = 100;
 }
@@ -40,7 +40,7 @@ function draw()
   fill(255, 0, 0);
   image(img, 0, 0, 1080, 720);
   image(swordfish, 400, 250, 250, 200);
-  image(cesna, 1100, 50, 300, 200);
+  image(cesna, 1100, 0, 200, 100);
   textSize(32);
   if(Money < 1000000)
     {
@@ -66,6 +66,7 @@ function draw()
     text('Cost:'+ updateCost, 300, 40);
    }
   
+   Money += moneyPerSec;
 }
 
 function mouseClicked()
@@ -84,7 +85,12 @@ function mouseClicked()
       console.log(moneyPerClick);
       console.log(playerLvl);
       console.log(playerClick);
-      
   }
+
+  if(mouseX > 1100 && mouseX < 1300 && mouseY > 0 && mouseY < 100)
+  {
+    moneyPerSec += 1;
+  }
+
 }
 
