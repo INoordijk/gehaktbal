@@ -39,6 +39,7 @@ function setup()
   cesnaCost = 40;
   totalCesna = 0;
   updateDone = 1;
+}
 
 function draw()
 {
@@ -127,4 +128,4 @@ function mouseClicked()
   }
  }
 }
-}
+
