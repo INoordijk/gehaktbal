@@ -50,6 +50,7 @@ function draw()
   textSize(32);
   totalCesna;
   cesnaCost;
+  Money;
   if(Money < 1000000)
     {
       text('Money: ' + round(Money), 460, 40);
@@ -114,11 +115,8 @@ function mouseClicked()
         updateDone = 1
     }
         
-        
-    console.log( updateCost);
-    console.log(moneyPerClick);
   }
-
+  }
   if(mouseX > 1100 && mouseX < 1300 && mouseY > 0 && mouseY < 100 && Money >= cesnaCost)
   {
     moneyPerSec += 1;
@@ -126,6 +124,5 @@ function mouseClicked()
     totalCesna += 1;
     cesnaCost *= 1.3;
   }
- }
 }
 
