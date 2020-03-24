@@ -6,6 +6,7 @@ let playerLvl;
 let playerClick;
 let upgreat;
 let cesna;
+let moneyPerSec;
 
 function preload()
 {
@@ -28,6 +29,7 @@ function setup()
   playerClick = 1;
   playerLvl = 1;
   image(cesna, 1100, 50, 300, 200);
+  moneyPerSec = 0;
 }
 
 function draw()
@@ -49,7 +51,9 @@ function draw()
     {
         text('Big pepe', 460, 40);
     }
+
   image(upgreat, 30, 100, 100, 100);
+  text('money per second: ' + moneyPerSec, 430, 60, textSize(20));
   
 }
 
@@ -72,3 +76,4 @@ function mouseClicked()
       
   }
 }
+
