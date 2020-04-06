@@ -39,6 +39,12 @@ function setup()
   cesnaCost = 40;
   totalCesna = 0;
   updateDone = 1;
+
+  Money = getItem('Money');
+  totalCesna = getItem('totalCesna');
+  moneyPerSec = getItem('MoneyPerSec');
+  cesnaCost = getItem('cesnaCost');
+  moneyPerClick = getItem('MoneyPerClick');
 }
 
 function draw()
@@ -48,7 +54,7 @@ function draw()
   image(swordfish, 400, 250, 250, 200);
   image(cesna, 1100, 0, 200, 100);
   textSize(32);
-  totalCesna;
+  totalCesna; 
   cesnaCost;
   Money;
   if(Money < 1000000)
@@ -88,6 +94,12 @@ function draw()
   
    Money += moneyPerSec/60;
 
+   storeItem('Money', Money);
+   storeItem('totalCesna', totalCesna);
+   storeItem('MoneyPerSec', moneyPerSec);
+   storeItem('cesnaCost', cesnaCost);
+   storeItem('MoneyPerClick', moneyPerClick);
+
 }
 
 function mouseClicked()
@@ -111,18 +123,19 @@ function mouseClicked()
         
     
       
-    if( updateDone = 3){
-        updateDone = 1
+    if( updateDone == 3)
+    {
+        updateDone = 1;
     }
         
   }
   }
   if(mouseX > 1100 && mouseX < 1300 && mouseY > 0 && mouseY < 100 && Money >= cesnaCost)
   {
-    moneyPerSec += 1;
     Money -= cesnaCost;
     totalCesna += 1;
     cesnaCost *= 1.3;
+    moneyPerSec += totalCesna / totalCesna;
   }
 }
 
