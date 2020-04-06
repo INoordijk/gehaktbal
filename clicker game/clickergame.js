@@ -45,6 +45,9 @@ function setup()
   moneyPerSec = getItem('MoneyPerSec');
   cesnaCost = getItem('cesnaCost');
   moneyPerClick = getItem('MoneyPerClick');
+  updateCost = getItem('updateCost');
+  playerClick = getItem('playerClick');
+  playerLvl = getItem('playerLvl');
 }
 
 function draw()
@@ -99,6 +102,9 @@ function draw()
    storeItem('MoneyPerSec', moneyPerSec);
    storeItem('cesnaCost', cesnaCost);
    storeItem('MoneyPerClick', moneyPerClick);
+   storeItem('updateCost', updateCost);
+   storeItem('playerClick', playerClick);
+   storeItem('playerLvl', playerLvl);
 
 }
 
@@ -120,13 +126,6 @@ function mouseClicked()
     moneyPerClick += playerClick;
     updateDone += 1;
     updateCost = updateCost * updateDone;
-        
-    
-      
-    if( updateDone == 3)
-    {
-        updateDone = 1;
-    }
         
   }
   }
